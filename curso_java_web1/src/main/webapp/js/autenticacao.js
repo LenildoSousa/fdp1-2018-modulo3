@@ -23,3 +23,5 @@ Autenticacao.prototype.validarCampos = function () {
 
 //Instanciamos o objeto
 aut = new Autenticacao();
+
+//Exemplo auterar do git...
