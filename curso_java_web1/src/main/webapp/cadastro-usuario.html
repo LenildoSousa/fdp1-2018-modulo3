@@ -1,0 +1,71 @@
+<html>
+    <head>
+
+        <script>
+
+        UsuarioController = function () {
+            
+            this.usuarios = [];
+            
+            //CREATE
+            this.adicionar = function (usu) {
+                this.usuarios.push(usu);
+            }
+            
+            //RETRIEVE
+            this.buscarTodos = function () {
+                return this.usuarios;
+            }
+            
+            //UPDATE
+            this.alterar = function () {
+                //alteração no vetor
+            }
+
+            //DELETE
+            this.excluir = function () {
+                //remover no vetor
+            }
+            
+            //DOM
+            this.aoClicarListar = function () {
+               usuarios = this.buscarTodos();
+               console.log(usuarios);
+            }
+
+            //Eventos
+            this.aoClicarSalvar = function () {
+                //Leitura dos dados
+                nomeUsuario = document.getElementById("txtUsuario").value;
+                senhaUsuario = document.getElementById("txtSenha").value;
+
+                //Constroi um objeto usuário
+                usu = {nome: nomeUsuario, senha: senhaUsuario};
+
+                //Adciona no vetor
+                this.adicionar(usu);
+            }
+
+            
+
+        }
+        
+        uc = new UsuarioController();        
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <form>
+            <input id="txtUsuario" placeholder="Nome do Usuário">
+            <input id="txtSenha" placeholder="Senha" type="password">
+            <input type="button" value="Salvar" onclick="uc.aoClicarSalvar();">
+            <Input type="button" value="Listar" onclick="uc.aoClicarListar()">
+        </form>
+
+    </body>
+
+
+</html>
